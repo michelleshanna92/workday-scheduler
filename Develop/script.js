@@ -28,8 +28,12 @@ function saveTextareaContent() {
 document.addEventListener('DOMContentLoaded', function() {
   var saveButtonEl = document.getElementsByClassName("btn");
   for (var i = 0; i < saveButtonEl.length; i++) {
-    saveButtonEl[i].addEventListener('click', saveTextareaContent);
+    saveButtonEl[i].addEventListener('click', saveContent);
   }
+  var saveContent = function(event){
+    var textElement = event.target.textContent
+    console.log(textElement)
+}
   var textareaElement = document.getElementsByClassName('description');
   
   var savedTextareaContent = localStorage.getItem('textareaContent');
